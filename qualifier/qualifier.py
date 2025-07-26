@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from node import Node
 
 def query_selector_all(node: Node, selector: str) -> list[Node]:
@@ -9,17 +10,10 @@ def query_selector_all(node: Node, selector: str) -> list[Node]:
 	for s in selectors:
 		if not s: continue
 
-		s = s.split('#')
-		if len(s) == 2:
-			req_tag = s[0]
-			s = s[1].split('.')
-			req_id = s[0]
-			req_class = set(s[1:])
-		else:
-			req_id = ''
-			s = s[0].split('.')
-			req_tag = s[0]
-			req_class = set(s[1:])
+		s = re.match(r"(\w*)([#\w-]*)([.\w-]*)", s).groups()
+		req_tag = s[0]
+		req_id = s[1][1:]
+		req_class = set(s[2].split('.')[1:])
 
 		out.extend(loop(node, req_tag, req_id, req_class))
 	return out
