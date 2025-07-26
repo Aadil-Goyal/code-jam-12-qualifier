@@ -7,14 +7,14 @@ Please read the rules and instructions carefully, and submit your solution befor
 - [Qualifying for the Code Jam](#qualifying-for-the-code-jam)
 - [Rules and Guidelines](#rules-and-guidelines)
 - [The Qualifier: Parssssel Tounge Page Parssssser](#parssssel-tongue-page-parssssser)
-    - [Background](#background)
-        - [What is a query selector?](#what-is-a-query-selector)
-    - [The Task](#the-task)
-        - [Query Selectors to Implement](#query-selectors-to-implement)
-        - [Examples](#examples)
-        - [What you are **NOT** expected to implement](#what-you-are-not-expected-to-implement)
-        - [The `Node` Class](#the-node-class)
-    - [Bonus Task](#bonus-task)
+	- [Background](#background)
+		- [What is a query selector?](#what-is-a-query-selector)
+	- [The Task](#the-task)
+		- [Query Selectors to Implement](#query-selectors-to-implement)
+		- [Examples](#examples)
+		- [What you are **NOT** expected to implement](#what-you-are-not-expected-to-implement)
+		- [The `Node` Class](#the-node-class)
+	- [Bonus Task](#bonus-task)
 
 # Qualifying for the Code Jam
 To qualify for the Code Jam you will be required to upload your submission to the [sign-up form](https://forms.pythondiscord.com/form/cj12-2025-qualifier). We set up our test suite so you don't have to worry about setting one up yourself.
@@ -69,12 +69,12 @@ For example, given the following HTML from a snake’s blogpost:
 ```html
 <html>
   <head>
-    <title>My Day in the Ssskatepark</title>
-    <meta ...>
+	<title>My Day in the Ssskatepark</title>
+	<meta ...>
   </head>
   <body>
-    <h1>I Went to the Ssskatepark today</h1>
-    <p>I practiced some tricksss and ended up competing with a rattlessssnake.</p>
+	<h1>I Went to the Ssskatepark today</h1>
+	<p>I practiced some tricksss and ended up competing with a rattlessssnake.</p>
   </body>
 </html>
 
@@ -90,28 +90,28 @@ config:
   theme: redux
 ---
 flowchart TD
-    Doc(["Document"]) --- Root{{"Root Element (&lt;html&gt;)"}}
-    Root --- Head("Head Element (&lt;head&gt;)") & Body("Body Element (&lt;body&gt;)")
-    Head --- Title("Title Element (&lt;title&gt;)") & Meta("Meta Element (&lt;meta&gt;)")
-    Title --- TitleText>"Text: Python Discord!"]
-    Body --- Heading("Heading Element (&lt;h1&gt;)") & Content("Paragraph Element (&lt;p&gt;)")
-    Heading --- HeadingText>"Text: Welcome to Python Discord!"]
-    Content --- ContentText@{ label: "Text: This is an example DOM tree, like the one you'll need to traverse!" }
-    ContentText@{ shape: odd}
-    style Root fill:#FFE0B2
-    style Root color:#000000
-    style Head fill:#FFCDD2
-    style Head color:#000000
-    style Body fill:#C8E6C9
-    style Body color:#000000
-    style Title fill:#E1BEE7
-    style Title color:#000000
-    style Meta fill:#E1BEE7
-    style Meta color:#000000
-    style Heading fill:#E1BEE7
-    style Heading color:#000000
-    style Content fill:#E1BEE7
-    style Content color:#000000
+	Doc(["Document"]) --- Root{{"Root Element (&lt;html&gt;)"}}
+	Root --- Head("Head Element (&lt;head&gt;)") & Body("Body Element (&lt;body&gt;)")
+	Head --- Title("Title Element (&lt;title&gt;)") & Meta("Meta Element (&lt;meta&gt;)")
+	Title --- TitleText>"Text: Python Discord!"]
+	Body --- Heading("Heading Element (&lt;h1&gt;)") & Content("Paragraph Element (&lt;p&gt;)")
+	Heading --- HeadingText>"Text: Welcome to Python Discord!"]
+	Content --- ContentText@{ label: "Text: This is an example DOM tree, like the one you'll need to traverse!" }
+	ContentText@{ shape: odd}
+	style Root fill:#FFE0B2
+	style Root color:#000000
+	style Head fill:#FFCDD2
+	style Head color:#000000
+	style Body fill:#C8E6C9
+	style Body color:#000000
+	style Title fill:#E1BEE7
+	style Title color:#000000
+	style Meta fill:#E1BEE7
+	style Meta color:#000000
+	style Heading fill:#E1BEE7
+	style Heading color:#000000
+	style Content fill:#E1BEE7
+	style Content color:#000000
 
 ```
 
@@ -122,8 +122,8 @@ Tags can have an identifier and a class. For example, the `<p>` node above could
 - The tag is “p”.
 - The identifier (id) is “innerContent”
 - The class has two elements separated by a space:
-    - “container”
-    - “colour-primary”
+	- “container”
+	- “colour-primary”
 
 ### Selecting nodes
 
@@ -137,8 +137,8 @@ To look at some further examples, consider the following HTML document (some tag
 ```html
 <div id="topDiv">
   <div id="innerDiv" class="container colour-primary">
-    <h1>This is a heading!</h1>
-    <p id="innerContent">I have some content within this container also!</p>
+	<h1>This is a heading!</h1>
+	<p id="innerContent">I have some content within this container also!</p>
   </div>
 </div>
 
@@ -194,15 +194,15 @@ The following examples are based on the below simple HTML structure:
 
 ```html
 <div id="topDiv">
-    <div id="innerDiv" class="container colour-primary">
-        <h1>This is a heading!</h1>
-        <p id="innerContent">I have some content within this container also!</p>
-        <p class="colour-secondary">This is another paragraph.</p>
-        <p class="colour-secondary">This is a third paragraph.</p>
-    </div>
-    <div class="container colour-secondary">
-        <p class="colour-primary">This is a paragraph in a secondary container.</p>
-    </div>
+	<div id="innerDiv" class="container colour-primary">
+		<h1>This is a heading!</h1>
+		<p id="innerContent">I have some content within this container also!</p>
+		<p class="colour-secondary">This is another paragraph.</p>
+		<p class="colour-secondary">This is a third paragraph.</p>
+	</div>
+	<div class="container colour-secondary">
+		<p class="colour-primary">This is a paragraph in a secondary container.</p>
+	</div>
 </div>
 
 ```
@@ -255,8 +255,8 @@ The `Node` class is a representation of a node as described in the background. I
 
 - `tag` (str): The tag name of the node (e.g., `div`, `p`, `h1`).
 - `attributes` (dict): A dictionary of attributes for the node (e.g., `{'id': 'topDiv', 'class': 'container'}`).
-    - The `id` and `class` attributes you need to implement ID and class query selectors for are stored here.
-    - The `class` attribute is a string containing space-separated class names.
+	- The `id` and `class` attributes you need to implement ID and class query selectors for are stored here.
+	- The `class` attribute is a string containing space-separated class names.
 - `children` (list): A list of child nodes (other `Node` instances).
 - `text` (str): The text content of the node (empty if not applicable).
 
@@ -264,10 +264,10 @@ An example `Node` might look like:
 
 ```python
 Node(
-    tag='div',
-    attributes={'id': 'topDiv', 'class': 'container'},
-    children=[...]
-    text=''
+	tag='div',
+	attributes={'id': 'topDiv', 'class': 'container'},
+	children=[...]
+	text=''
 )
 
 ```
@@ -277,61 +277,61 @@ You are expected to return the `Node` instances that match the query selector, n
 
 <details>
 <summary>A full version of the Node structure used in the following examples is below.</summary>
-    
+	
 ```python
 Node(
-    tag='div',
-    attributes={'id': 'topDiv'},
-    children=[
-        Node(
-            tag='div',
-            attributes={'id': 'innerDiv', 'class': 'container colour-primary'},
-            children=[
-                Node(
-                    tag='h1',
-                    attributes={},
-                    children=[],
-                    text='This is a heading!'
-                ),
-                Node(
-                    tag='p',
-                    attributes={'id': 'innerContent'},
-                    children=[],
-                    text='I have some content within this container also!'
-                ),
-                Node(
-                    tag='p',
-                    attributes={'class': 'colour-secondary'},
-                    children=[],
-                    text='This is another paragraph.'
-                ),
-                Node(
-                    tag='p',
-                    attributes={'class': 'colour-secondary'},
-                    children=[],
-                    text='This is a third paragraph.'
-                )
-            ],
-            text=''
-        ),
-        Node(
-            tag='div',
-            attributes={'class': 'container colour-secondary'},
-            children=[
-                Node(
-                    tag='p',
-                    attributes={'class': 'colour-primary'},
-                    children=[],
-                    text='This is a paragraph in a secondary container.'
-                )
-            ],
-            text=''
-        )
-    ],
-    text=''
+	tag='div',
+	attributes={'id': 'topDiv'},
+	children=[
+		Node(
+			tag='div',
+			attributes={'id': 'innerDiv', 'class': 'container colour-primary'},
+			children=[
+				Node(
+					tag='h1',
+					attributes={},
+					children=[],
+					text='This is a heading!'
+				),
+				Node(
+					tag='p',
+					attributes={'id': 'innerContent'},
+					children=[],
+					text='I have some content within this container also!'
+				),
+				Node(
+					tag='p',
+					attributes={'class': 'colour-secondary'},
+					children=[],
+					text='This is another paragraph.'
+				),
+				Node(
+					tag='p',
+					attributes={'class': 'colour-secondary'},
+					children=[],
+					text='This is a third paragraph.'
+				)
+			],
+			text=''
+		),
+		Node(
+			tag='div',
+			attributes={'class': 'container colour-secondary'},
+			children=[
+				Node(
+					tag='p',
+					attributes={'class': 'colour-primary'},
+					children=[],
+					text='This is a paragraph in a secondary container.'
+				)
+			],
+			text=''
+		)
+	],
+	text=''
 )
 ```
-</details>    
+</details>	
 
 For example, given the above node, your program should match the following:
 
@@ -340,8 +340,8 @@ For example, given the above node, your program should match the following:
 [Node(tag='div', attributes={'id': 'innerDiv', 'class': 'container colour-primary'}, children=[...], text='')]
 >>> query_selector_all(node, '.colour-secondary')
 [
-    Node(tag='p', attributes={'class': 'colour-secondary'}, children=[], text='This is another paragraph.'),
-    Node(tag='p', attributes={'class': 'colour-secondary'}, children=[], text='This is a third paragraph.')
+	Node(tag='p', attributes={'class': 'colour-secondary'}, children=[], text='This is another paragraph.'),
+	Node(tag='p', attributes={'class': 'colour-secondary'}, children=[], text='This is a third paragraph.')
 ]
 ```
 
